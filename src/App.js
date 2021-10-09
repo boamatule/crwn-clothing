@@ -47,14 +47,14 @@ componentWillUnmount() {
   render() {
     return (
       <div>
-        <Router>
+        {/* <Router> */}
           <Header currentUser={this.state.currentUser} />
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route path='/shop' component={ShopPage} />
             <Route path="/SignIn" component={SignInAndSignUpPage} />
           </Switch>
-        </Router>
+        {/* </Router> */}
       </div>
     );
   }
