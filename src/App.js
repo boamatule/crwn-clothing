@@ -7,8 +7,7 @@ import {
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 
-import './App.css';
-
+import { GlobalStyle } from '../src/global.styles';
 
 import Header from "./components/header/header.component";
 import HomePage from './pages/homepage/homepage.component';
@@ -51,6 +50,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
