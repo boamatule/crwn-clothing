@@ -1,4 +1,5 @@
 import React from 'react';
+// import * as ServiceWorker from './service-worker.js';
 import {
   Switch,
   Route,
@@ -79,5 +80,7 @@ const mapStateProps = createStructuredSelector({
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
+
+// ServiceWorker.register();
 
 export default connect(mapStateProps, mapDispatchToProps)(App);
