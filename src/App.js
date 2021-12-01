@@ -12,18 +12,12 @@ import ShopPage from './pages/shop/shop.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 
 import SignInAndSignUpPage from './pages/signin/sign-in-and-sign-up.component';
-import {
-  auth,
-  createUserProfileDocument,
-} from './firebase/firebase.utils';
 
-import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
 
     // this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
     //   if (userAuth) {
@@ -39,6 +33,7 @@ class App extends React.Component {
 
     //   setCurrentUser(userAuth);
     // });
+
   }
 
   componentWillUnmount() {
@@ -61,15 +56,10 @@ class App extends React.Component {
   }
 }
 
-const mapStateProps = createStructuredSelector({
+const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  // collectionArray: selectCollectionsForPreview
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
 // ServiceWorker.register();
 
-export default connect(mapStateProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
