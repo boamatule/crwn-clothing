@@ -1,4 +1,3 @@
-import purgeStoredState from 'redux-persist/es/purgeStoredState';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 
 import UserActionTypes from '../user/user.types';
