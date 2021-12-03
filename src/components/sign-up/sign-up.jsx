@@ -4,7 +4,7 @@ import CustomButton from "../custom-button/custom-button.component";
 import FormInput from "../form-input/form-input.component";
 
 // import { auth, createUserProfileDocument } from "../../firebase/firebase.utils.js";
-import { signUpStart, onSignUpSuccess } from "../../redux/user/user.actions";
+import { signUpStart} from "../../redux/user/user.actions";
 import { SignUpContainer, SignUpTitle } from "./sign-up.styles";
 
 class SignUp extends React.Component {
