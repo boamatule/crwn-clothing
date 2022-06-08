@@ -25,6 +25,9 @@ app.listen(port, error => {
   console.log('Server running on port ' + port);
 });
 
+app.get('/serviceWorkerRegistration.js', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'build', 'serviceWorkerRegistration.js'))
+})
 app.post('/payment', (req, res) => {
   const body = {
     source: req.body.token.id,
