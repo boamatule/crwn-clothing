@@ -19,6 +19,11 @@ export const fetchCollectionsFailure = errorMessage => ({
   payload: errorMessage
 });
 
+export const updateCollections = () => ({
+  type: ShopActionTypes.FETCH_COLLECTIONS_UPDATE,
+  // payload: errorMessage
+});
+
 export const fetchCollectionsStartAsync = () => {
   return dispatch => {
     const collectionRef = firestore.collection('collections');

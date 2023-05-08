@@ -23,7 +23,7 @@ class ShopPage extends React.Component {
   unsubscribeFromSnashop = null;
 
   componentDidMount() {
-    const { updateCollections } = this.props;
+    const { updateCollectiions } = this.props;
     const collectionRef = firestore.collection("collections");
 
     collectionRef.get().then(snapshot  => {

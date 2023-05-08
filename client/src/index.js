@@ -1,24 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './redux/store';
+import { persistor, store } from './redux/store';
 
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import './index.css';
 import App from './App';
+import './index.css';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import reportWebVitals from './reportWebVitals';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-
-ReactDOM.render(
+root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <PersistGate persistor={persistor}>
-        <App />
-      </PersistGate>
-    </BrowserRouter>
+    <React.StrictMode>
+      <BrowserRouter>
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
+      </BrowserRouter>
+    </React.StrictMode>
+
   </Provider>,
   document.getElementById('root')
 );
 
+
 serviceWorkerRegistration.register();
+reportWebVitals();
